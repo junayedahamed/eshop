@@ -1,5 +1,3 @@
-import 'package:buttons_tabbar/buttons_tabbar.dart';
-import 'package:eshop/pages/cart_page.dart';
 import 'package:eshop/pages/tabs/tab_bar.dart';
 import 'package:eshop/pages/tabs/tab_bar_view.dart';
 import 'package:flutter/material.dart';
