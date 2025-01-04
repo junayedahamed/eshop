@@ -32,32 +32,41 @@ class WalletProduct extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                children: [
-                  Image.network(
-                    product['image'],
-                    height: 85,
-                    width: double.infinity,
-                    fit: BoxFit.fitWidth,
-                  ),
-                  Text(
-                    product['name'],
-                    style: productNameTextstyle(),
-                  ),
-                  Text(product['description']),
-                  Row(
-                    children: [
-                      Text(product['rating'],
-                          style: TextStyle(
-                            color: Colors.orange,
-                            fontSize: 16,
-                          )),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 18,
-                  ),
-                ],
+              GestureDetector(
+                onTap: () {},
+                child: Column(
+                  children: [
+                    Image.network(
+                      product['image'],
+                      height: 85,
+                      width: double.infinity,
+                      fit: BoxFit.fitWidth,
+                    ),
+                    Text(
+                      product['name'],
+                      style: productNameTextstyle(),
+                    ),
+                    Text(product['description']),
+                    Row(
+                      spacing: 7,
+                      children: [
+                        Text(product['rating'],
+                            style: TextStyle(
+                              color: Colors.orange,
+                              fontSize: 16,
+                            )),
+                        Icon(
+                          Icons.star,
+                          color: Colors.amber,
+                          size: 20,
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 18,
+                    ),
+                  ],
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
