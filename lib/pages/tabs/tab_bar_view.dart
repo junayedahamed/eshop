@@ -1,4 +1,4 @@
-import 'package:eshop/pages/cart_page.dart';
+import 'package:eshop/products/wallet.dart';
 import 'package:flutter/material.dart';
 
 class MyTabBarView extends StatelessWidget {
@@ -11,7 +11,7 @@ class MyTabBarView extends StatelessWidget {
         controller: tabController,
         children: [
           // Replace CartPage with your list
-          CartPage(),
+          WalletProduct(),
           // ListView Example for Tab 2
           ListView.builder(
             itemCount: 20,
