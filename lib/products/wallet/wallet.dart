@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:eshop/cart/add_to_cart_button.dart';
+import 'package:eshop/cart/adding_notification_snacbar.dart';
 import 'package:eshop/products/product_name_text_style.dart';
 import 'package:flutter/material.dart';
 
@@ -62,9 +64,6 @@ class WalletProduct extends StatelessWidget {
                         )
                       ],
                     ),
-                    SizedBox(
-                      height: 18,
-                    ),
                   ],
                 ),
               ),
@@ -72,22 +71,11 @@ class WalletProduct extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Price:${product['price']}"),
-                  IconButton(
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text("Item added  to cart"),
-                          padding: EdgeInsets.all(15),
-                          duration: Duration(seconds: 1, milliseconds: 500),
-                          clipBehavior: Clip.antiAliasWithSaveLayer,
-                        ),
-                      );
+                  AddToCartButton(
+                    onpress: () {
+                      addingCartNotification(context);
                     },
-                    icon: Icon(
-                      Icons.add_shopping_cart,
-                      color: Colors.indigo,
-                    ),
-                  ),
+                  )
                 ],
               )
             ],

@@ -1,4 +1,4 @@
-import 'package:eshop/products/wallet.dart';
+import 'package:eshop/products/wallet/wallet.dart';
 import 'package:flutter/material.dart';
 
 class MyTabBarView extends StatelessWidget {
