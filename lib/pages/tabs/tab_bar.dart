@@ -8,12 +8,10 @@ class MyTabBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        // SizedBox(
-        //   width: 15,
-        // ),
         ButtonsTabBar(
           contentPadding: EdgeInsets.symmetric(horizontal: 8),
           labelStyle: TextStyle(color: Colors.black),
+          unselectedBorderColor: Colors.white,
           buttonMargin: EdgeInsets.all(15),
           height: 70,
           borderColor: Colors.indigo,

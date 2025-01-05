@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:eshop/cart/adding_notification_snacbar.dart';
 import 'package:eshop/products/product%20Gridview/product_grid_view.dart';
 import 'package:flutter/material.dart';
@@ -23,13 +22,28 @@ class ProductBags extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return ProductGridView(
-      previous: true,
-      products: products,
-      cartaddonpress: () {
-        addingCartNotification(context);
-      },
-      navigateOnpress: () {},
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Best Sells",
+          style: TextStyle(
+            color: Colors.indigo,
+            fontSize: 22,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        Expanded(
+          child: ProductGridView(
+            previous: true,
+            products: products,
+            cartaddonpress: () {
+              addingCartNotification(context);
+            },
+            navigateOnpress: () {},
+          ),
+        ),
+      ],
     );
   }
 }
