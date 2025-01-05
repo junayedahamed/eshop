@@ -1,5 +1,5 @@
-import 'package:eshop/pages/tabs/tab_bar.dart';
-import 'package:eshop/pages/tabs/tab_bar_view.dart';
+import 'package:eshop/pages/home/tabs/tab_bar.dart';
+import 'package:eshop/pages/home/tabs/tab_bar_view.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
