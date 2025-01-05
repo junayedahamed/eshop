@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:eshop/cart/adding_notification_snacbar.dart';
 import 'package:eshop/products/product%20Gridview/product_grid_view.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,10 @@ class ProductBags extends StatelessWidget {
   final List<Map<String, dynamic>> products = List.generate(50, (index) {
     return {
       'name': 'Bag ${index + 1}',
-      'price': '\$${(index + 1) * rng.nextInt(6)}',
+      'price':
+          '\$${((index + 1) * rng.nextInt(6) - ((index + 1) * rng.nextInt(6) * 0.10)).toInt()}',
+      'priviousPrice': '\$${(index + 1) * rng.nextInt(6)}',
+
       'description':
           'High-quality leather wallet ${index + 1} with stylish design.',
       'image': 'https://picsum.photos/200/300?random=${index + 1}',
@@ -19,6 +23,13 @@ class ProductBags extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return ProductGridView(products: products);
+    return ProductGridView(
+      previous: true,
+      products: products,
+      cartaddonpress: () {
+        addingCartNotification(context);
+      },
+      navigateOnpress: () {},
+    );
   }
 }

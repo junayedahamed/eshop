@@ -23,8 +23,10 @@ class MyTabBar extends StatelessWidget {
             color: Colors.white,
             // borderRadius: BorderRadius.circular(120),
           ),
-          unselectedBorderColor: Colors.grey,
-          unselectedBackgroundColor: Colors.white,
+          unselectedDecoration: BoxDecoration(
+            color: Colors.white,
+          ),
+          //unselectedBackgroundColor: Colors.white,
           radius: 15,
           controller: tabController,
           elevation: 5,

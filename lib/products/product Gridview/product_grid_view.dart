@@ -1,12 +1,19 @@
 import 'package:eshop/cart/add_to_cart_button.dart';
-import 'package:eshop/cart/adding_notification_snacbar.dart';
 import 'package:eshop/products/product_name_text_style.dart';
 import 'package:flutter/material.dart';
 
 class ProductGridView extends StatelessWidget {
-  const ProductGridView({super.key, required this.products});
-
+  const ProductGridView({
+    super.key,
+    required this.products,
+    required this.cartaddonpress,
+    required this.navigateOnpress,
+    this.previous = false,
+  });
+  final bool previous;
   final List<Map<String, dynamic>> products;
+  final VoidCallback cartaddonpress;
+  final VoidCallback navigateOnpress;
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -22,7 +29,7 @@ class ProductGridView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               GestureDetector(
-                onTap: () {},
+                onTap: navigateOnpress,
                 child: Column(
                   children: [
                     Image.network(
@@ -57,12 +64,29 @@ class ProductGridView extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Price:${product['price']}"),
-                  AddToCartButton(
-                    onpress: () {
-                      addingCartNotification(context);
-                    },
-                  )
+                  RichText(
+                    text: TextSpan(children: [
+                      TextSpan(
+                        text: "Price:",
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                      previous
+                          ? TextSpan(
+                              text: " ${product['priviousPrice']}",
+                              style: productPriceDecoration(stroke: true),
+                            )
+                          : TextSpan(),
+                      TextSpan(
+                        text: " ${product['price']}",
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                    ]),
+                  ),
+                  AddToCartButton(onpress: cartaddonpress)
                 ],
               )
             ],
