@@ -74,7 +74,7 @@ class ProductGridView extends StatelessWidget {
                           color: Colors.black,
                         ),
                       ),
-                      previous
+                      product['showprev']
                           ? TextSpan(
                               text: " ${product['priviousPrice']}",
                               style: productPriceDecoration(stroke: true),
