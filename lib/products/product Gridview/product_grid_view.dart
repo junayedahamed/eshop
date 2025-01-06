@@ -6,14 +6,14 @@ class ProductGridView extends StatelessWidget {
   const ProductGridView({
     super.key,
     required this.products,
-    required this.cartaddonpress,
-    required this.navigateOnpress,
+    // required this.cartaddonpress,
+    // required this.navigateOnpress,
     this.previous = false,
   });
   final bool previous;
   final List<Map<String, dynamic>> products;
-  final VoidCallback cartaddonpress;
-  final VoidCallback navigateOnpress;
+  // final VoidCallback cartaddonpress;
+  // final VoidCallback navigateOnpress;
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -29,7 +29,9 @@ class ProductGridView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               GestureDetector(
-                onTap: navigateOnpress,
+                onTap: () {
+                  print("Navigate to deatils page ${product['name']}");
+                },
                 child: Column(
                   children: [
                     Image.network(
@@ -86,7 +88,9 @@ class ProductGridView extends StatelessWidget {
                       ),
                     ]),
                   ),
-                  AddToCartButton(onpress: cartaddonpress)
+                  AddToCartButton(onpress: () {
+                    print("Add to Cart button for ${product['name']}");
+                  })
                 ],
               )
             ],
