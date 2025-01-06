@@ -1,3 +1,4 @@
+import 'package:eshop/bottomnavigator/Drawer/my_drawer.dart';
 import 'package:eshop/bottomnavigator/bottom_nav_bar.dart';
 import 'package:eshop/bottomnavigator/navigation_bar_controller.dart';
 import 'package:eshop/cart/cart_page.dart';
@@ -17,11 +18,8 @@ class EshopAppBarNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MyDrawer(),
       appBar: AppBar(
-        leading: Icon(
-          Icons.menu,
-          color: Colors.white,
-        ),
         backgroundColor: Colors.indigo,
         centerTitle: true,
         title: Text(
