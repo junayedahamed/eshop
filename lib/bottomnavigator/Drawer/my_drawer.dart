@@ -1,8 +1,13 @@
+import 'package:eshop/bottomnavigator/Drawer/Drawer_containers/drawer_containers.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
-  const MyDrawer({super.key});
-
+  MyDrawer({super.key});
+  final List item = [
+    "Offers",
+    "Favourite",
+    "My Orders",
+  ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -60,6 +65,21 @@ class MyDrawer extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  return Drawertile(
+                    text: item[index],
+                    trailing: "${index + 1}",
+                    onpress: () {},
+                  );
+                },
+                itemCount: item.length,
+              ),
+            )
           ],
         ),
       ),
