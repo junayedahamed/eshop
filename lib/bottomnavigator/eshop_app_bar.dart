@@ -1,8 +1,8 @@
 import 'package:eshop/bottomnavigator/bottom_nav_bar.dart';
 import 'package:eshop/bottomnavigator/navigation_bar_controller.dart';
-import 'package:eshop/pages/cart_page.dart';
+import 'package:eshop/cart/cart_page.dart';
 import 'package:eshop/pages/home/home_page.dart';
-import 'package:eshop/pages/user_info_page.dart';
+import 'package:eshop/user%20Page/user_info_page.dart';
 import 'package:flutter/material.dart';
 
 class EshopAppBarNavigationBar extends StatelessWidget {

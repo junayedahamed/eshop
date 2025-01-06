@@ -1,4 +1,5 @@
 import 'package:eshop/products/bag/bags.dart';
+import 'package:eshop/products/shoes/shoes.dart';
 import 'package:eshop/products/wallet/wallet.dart';
 import 'package:flutter/material.dart';
 
@@ -11,18 +12,11 @@ class MyTabBarView extends StatelessWidget {
       child: TabBarView(
         controller: tabController,
         children: [
-          // Replace CartPage with your list
+          // product view
           WalletProduct(),
-          // ListView Example for Tab 2
-          ListView.builder(
-            itemCount: 20,
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text("Item $index"),
-              );
-            },
-          ),
-          // ListView Example for Tab 3
+          //Shoes product view
+          ProDuctShoes(),
+          //BAgs product view
           ProductBags(),
         ],
       ),

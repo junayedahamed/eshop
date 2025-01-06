@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'package:eshop/cart/adding_notification_snacbar.dart';
 import 'package:eshop/products/product%20Gridview/product_grid_view.dart';
 import 'package:flutter/material.dart';
 

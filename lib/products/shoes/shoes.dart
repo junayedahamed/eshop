@@ -23,12 +23,14 @@ class ProDuctShoes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           "Best Shoes",
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 22,
             fontWeight: FontWeight.w700,
+            color: Colors.indigo,
           ),
         ),
         Expanded(
