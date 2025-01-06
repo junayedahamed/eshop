@@ -23,7 +23,7 @@ class EshopAppBarNavigationBar extends StatelessWidget {
         backgroundColor: Colors.indigo,
         centerTitle: true,
         title: Text(
-          "Eshop",
+          "eShop",
           style: TextStyle(
             color: Colors.white,
             letterSpacing: 1.9,

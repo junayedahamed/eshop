@@ -23,7 +23,7 @@ class MyDrawer extends StatelessWidget {
                 curve: Curves.bounceInOut,
                 decoration: BoxDecoration(
                   color: Colors.indigo,
-                  backgroundBlendMode: BlendMode.hardLight,
+                  // backgroundBlendMode: BlendMode.hardLight,
                 ),
                 child: Column(
                   spacing: 10,
