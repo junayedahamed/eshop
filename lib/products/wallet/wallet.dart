@@ -11,7 +11,7 @@ class WalletProduct extends StatelessWidget {
     bool showPrev = rng.nextDouble() < 0.80; // 20% chance of being true
 
     return {
-      'name': 'Bag ${index + 1}',
+      'name': 'Wallet ${index + 1}',
       'price':
           '\$${((index + 1) * rng.nextInt(6) - ((index + 1) * rng.nextInt(6) * 0.10)).toInt()}',
       'priviousPrice': '\$${(index + 1) * rng.nextInt(6)}',

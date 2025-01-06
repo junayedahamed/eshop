@@ -1,4 +1,5 @@
 import 'package:eshop/cart/add_to_cart_button.dart';
+import 'package:eshop/cart/cart_item_list.dart';
 import 'package:eshop/products/product_name_text_style.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class ProductGridView extends StatelessWidget {
   final List<Map<String, dynamic>> products;
   // final VoidCallback cartaddonpress;
   // final VoidCallback navigateOnpress;
+  // final CartItemList _cart = CartItemList();
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -88,9 +90,20 @@ class ProductGridView extends StatelessWidget {
                       ),
                     ]),
                   ),
-                  AddToCartButton(onpress: () {
-                    print("Add to Cart button for ${product['name']}");
-                  })
+                  AddToCartButton(
+                    onpress: () {
+                      cartitems.add(product);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text("Item added  to cart"),
+                          padding: EdgeInsets.all(15),
+                          duration: Duration(seconds: 1, milliseconds: 500),
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                        ),
+                      );
+                      //addingCartNotification(context);
+                    },
+                  )
                 ],
               )
             ],
