@@ -1,4 +1,5 @@
 import 'package:eshop/cart/cart_item_list.dart';
+import 'package:eshop/cart/product_details.dart';
 import 'package:flutter/material.dart';
 
 class CartPage extends StatelessWidget {
@@ -28,7 +29,16 @@ class CartPage extends StatelessWidget {
                   width: double.infinity,
                   child: Card(
                     child: ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ProductDetailsPage(
+                              product: item,
+                            ),
+                          ),
+                        );
+                      },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
